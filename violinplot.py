@@ -65,7 +65,7 @@ def violin(d,x,p,v,w,left=True, mean=False, mode=False, outliers=False, normal=F
         
     mn = np.mean(d)
     st = np.std(d)
-    sem = scipy.stats.sem(d)        
+    sem = scipy.stats.sem(d)  * 1.96      
     six = ((x>mn-sem) & (x<mn+sem))
         
     vl, l25, med, u25, vh = scipy.stats.mstats.mquantiles(d, prob=[0.02, 0.25, 0.5, 0.75, 0.98])
@@ -194,7 +194,7 @@ def regression(pos, data, color='r'):
 def violin_plot(data, pos=None, ax=None, alt_data=None, spacing=0.75,  regress=False, labels=None, label_rotate=0, **kwargs):
     '''
     Create violin plots on an axis. Shows distribution of the data use a kernel density estimate, along with median, interquartile ranges,
-    2% and 98% percentiles. Can optionally show the mean, standard deviation, standard error and modes of the density estimate.
+    2% and 98% percentiles. Can optionally show the mean, standard deviation, 95% CI and modes of the density estimate.
     
     data: Data to plot
     pos (optional): Positions of the violins. If None, uses 0,1,2,3... etc.
