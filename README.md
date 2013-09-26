@@ -13,7 +13,8 @@ Usage:
     violinplot.violin_plot(data, alt_data=data2)
 
     
-    violin_plot(data, pos=None, ax=None, alt_data=None, spacing=0.75,  regress=False, labels=None, label_rotate=0, **kwargs):
+    
+*violin_plot(data, pos=None, ax=None, alt_data=None, spacing=0.75,  regress=False, labels=None, label_rotate=0, ...)*
     
 Create violin plots on an axis. Shows distribution of the data use a kernel density estimate, along with median, interquartile ranges,
 2% and 98% percentiles. Can optionally show the mean, standard deviation, standard error and modes of the density estimate.
